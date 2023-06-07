@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de estoque de peças</title>
+
+    <script>
+        
+        var saldoEstoque = 0;
+  
+        function adicionarItem() {
+          var quantidade = parseInt(prompt("Digite a quantidade a ser adicionada:"));
+          saldoEstoque += quantidade;
+          alert(quantidade + " itens adicionados ao estoque. Saldo atual: " + saldoEstoque);
+        }
+  
+        function removerItem() {
+          var quantidade = parseInt(prompt("Digite a quantidade a ser removida:"));
+          if (quantidade > saldoEstoque) {
+            alert("Quantidade insuficiente no estoque. Saldo atual: " + saldoEstoque);
+          } else {
+            saldoEstoque -= quantidade;
+            alert(quantidade + " itens removidos do estoque. Saldo atual: " + saldoEstoque);
+          }
+        }
+  
+        function verificarEstoque() {
+          alert("Saldo atual do estoque: " + saldoEstoque);
+        }
+  
+        function verificarAlertaEstoqueBaixo() {
+          if (saldoEstoque <= 10) {
+            alert("Atenção! Estoque baixo. Saldo atual: " + saldoEstoque);
+          }
+        }
+      </script>
+</head>
+<body>
+     <style>
+        body {
+            background-color: lightblue;
+        }
+    </style>
+    <h1>Controle de Estoque</h1>
+    <button onclick="adicionarItem()">Adicionar Item</button>
+    <button onclick="removerItem()">Remover Item</button>
+    <button onclick="verificarEstoque()">Verificar Estoque</button>
+    <button onclick="verificarAlertaEstoqueBaixo()">Verificar Alerta de Estoque Baixo</button> <br>
+    <center> <img src="Controle de estoque.drawio.png"> </center>
+</body>
+</html>
